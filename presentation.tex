@@ -1,4 +1,4 @@
-\documentclass[aspectratio=43]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usepackage[font={scriptsize}]{caption}
 \usepackage{graphicx}
@@ -46,7 +46,7 @@
     \frametitle{OpenStack Architecture}
     \begin{center}
         \begin{figure}
-            \includegraphics[height=5cm]{images/openstack-arch-kilo-logical-v1.png}
+            \includegraphics[height=6cm]{images/openstack-arch-kilo-logical-v1.png}
 
             \tiny{© OpenStack Foundation, Source: http://docs.openstack.org/admin-guide/common/get-started-logical-architecture.html,  Creative Commons Attribution 3.0 License}
         \end{figure}
@@ -183,7 +183,7 @@
         \begin{itemize}
             \item You need to run it as A/P service…
             \pause
-            \item …so you'll need some cluster management software like Pacemaker to monitor and keep it running…
+            \item …so you'll need some cluster management software like Pacemaker (or k8s ;)) to monitor and keep it running…
             \pause
             \item …and some fencing software to protect from split-brains and zombie services.
         \end{itemize}
