@@ -1,4 +1,4 @@
-\documentclass[aspectratio=43]{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usepackage[font={scriptsize}]{caption}
 \usepackage{graphicx}
@@ -46,7 +46,7 @@
     \frametitle{OpenStack Architecture}
     \begin{center}
         \begin{figure}
-            \includegraphics[height=5cm]{images/openstack-arch-kilo-logical-v1.png}
+            \includegraphics[height=6cm]{images/openstack-arch-kilo-logical-v1.png}
 
             \tiny{© OpenStack Foundation, Source: http://docs.openstack.org/admin-guide/common/get-started-logical-architecture.html,  Creative Commons Attribution 3.0 License}
         \end{figure}
@@ -226,8 +226,16 @@
 \begin{frame}
     \frametitle{Neutron HA}
     \begin{itemize}
-        \item Get's better and better with each release.
-        \item TODO.
+        \item Liberty
+        \begin{itemize}
+	        \item DVR - Distributed Virtual Router - east/west routing on compute node, floating IP resolved on compute node also. The SNAT (for fixed IP) is on centralized network node, only one network node can be available per installation
+	        \item L3 HA - multiple network node in active/passive configuration (VRRP, keepalived) - this is single network node resolving east/west routing, floating and and SNAT on single node.
+	        \item DHCP, metadata agents - A/A, multiple agents are working on each network node.
+	    \end{itemize}
+        \item Mitaka
+        \begin{itemize}
+            \item DVR-HA - Use DVR and multiple active/passive network nodes for SNAT.
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -237,6 +245,8 @@
         \item \href{http://docs.openstack.org/ha-guide/}{OpenStack High Availability Guide}
         \item \href{https://docs.mirantis.com/openstack/fuel/fuel-7.0/reference-architecture.html}{Mirantis OpenStack 7.0 Reference Architecture} (might be a little outdated)
         \item \href{http://clusterlabs.org/}{Pacemaker documentation}
+        \item \href{http://docs.openstack.org/mitaka/networking-guide/scenario-dvr-ovs.html}{Neutron DVR Documentation}
+        \item \href{http://docs.openstack.org/mitaka/networking-guide/scenario-l3ha-ovs.html}{Neutron L3 VRRP Documentation}
         \item \href{irc://chat.freenode.net/openstack-ha}{\#openstack-ha IRC channel (freenode)}
     \end{itemize}
 \end{frame}
