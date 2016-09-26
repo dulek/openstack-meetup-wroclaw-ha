@@ -1,4 +1,4 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=43]{beamer}
 
 \usepackage[font={scriptsize}]{caption}
 \usepackage{graphicx}
@@ -46,7 +46,7 @@
     \frametitle{OpenStack Architecture}
     \begin{center}
         \begin{figure}
-            \includegraphics[height=6cm]{images/openstack-arch-kilo-logical-v1.png}
+            \includegraphics[height=5cm]{images/openstack-arch-kilo-logical-v1.png}
 
             \tiny{© OpenStack Foundation, Source: http://docs.openstack.org/admin-guide/common/get-started-logical-architecture.html,  Creative Commons Attribution 3.0 License}
         \end{figure}
@@ -91,7 +91,7 @@
     \begin{center}
         \begin{itemize}
             \item Clustered RabbitMQ.
-            \item Againg running on 3, 5, 7, … nodes for quorum.
+            \item Again running on 3, 5, 7, … nodes for quorum.
             \item Erlang's internal database (Mnesia) is responsible for keeping state consistent.
             \item Running RabbitMQ, especially in HA, is considered non-trivial.
         \end{itemize}
